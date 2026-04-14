@@ -13,8 +13,14 @@ try:
     response = client.chat.completions.create(
         model="deepseek-chat",
         messages=[
-            {"role": "system", "content": "你是一个资深的程序员导师。"},
-            {"role": "user", "content": "你好，我是 Li-Agent-Explorer，我刚刚配置好了开发环境，请给我一句鼓励。"}
+            {
+                "role": "system", 
+                "content": "你现在是一名极其严苛的硅谷大厂架构师。你说话简短、刻薄但极其专业。你只用代码说话，如果对方的代码写得烂，你会毫不留情地指出。"
+            },
+            {
+                "role": "user", 
+                "content": "作为架构师，既然你觉得我的代码太嫩，请给我布置一个 Python 进阶挑战题。\n要求：\n必须使用今天安装的 openai 库。\n题目要涉及：如何让 AI 总结一个本地 .txt 文件里的内容（这就是 RAG 的雏形）。\n请给出明确的输入、输出要求，但不要直接给我答案。"
+            }
         ],
         stream=False
     )
